@@ -4,7 +4,9 @@
 
 import pygame
 import sys
+import random
 import config  # Import the config module
+
 
 def init_game():
     pygame.init()
@@ -21,6 +23,10 @@ def handle_events():
                 return False  # Return False to indicate quitting
     return True  # Continue running if no quit event
 
+def draw_text(screen, text, font, text_color, x, y):
+    inserted_text = font.render(text, True, text_color)
+    screen.blit(inserted_text, (x, y))
+
 def main():
 
     screen = init_game()  # Initialize the game and get the screen
@@ -35,6 +41,19 @@ def main():
 
         # Fill the screen with a background color 
         screen.fill(config.WHITE) 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         pygame.display.flip()  # Update the display
 
