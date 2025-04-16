@@ -22,6 +22,8 @@ TITLE = "My Pygame Project"
 # Frame rate (frames per second)
 FPS = 60
 
+# sound Files
+DOOM_SOUND_EFFECT = "doom-death-sound-effect.ogg"
 
 
 
