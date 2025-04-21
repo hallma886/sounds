@@ -24,17 +24,22 @@ def handle_events():
                 return False  # Return False to indicate quitting
     return True  # Continue running if no quit event
 
-def draw_text(screen, text, font, text_color, x, y):
-    inserted_text = font.render(text, True, text_color)
-    screen.blit(inserted_text, (x, y))
+def draw_text(screen, text, text_font, text_color, y):
+    text_font = pygame.font.SysFont("Arial", 30)
+    inserted_text = text_font.render(text, True, text_color)
+    screen.blit(inserted_text, (90, y))
 
 def main():
 
     screen = init_game()  # Initialize the game and get the screen
     clock = pygame.time.Clock() # Initialize the clock objecct
     
+    base_y = 30
 
- 
+    line_height = 20
+    text_font = pygame.font.Font(None, 30)
+    
+    instructions = ["Press 'a' to play Sound Effect #1", "Press 's' to play Sound Effect #2"]
     # Main game loop
     running = True
     while running:
@@ -43,10 +48,23 @@ def main():
         # Fill the screen with a background color 
         screen.fill(config.WHITE) 
 
+        for i in range(len(instructions)):
+            draw_text(screen, instructions[i], text_font, config.BLACK, base_y + i * line_height)
 
-
-
-
+            keys = pygame.key.get_pressed()
+            if keys[pygame.K_q]:
+                config.DOOM_SOUND_EFFECT.play()
+            if keys[pygame.K_w]:
+                config.ZAP.play()
+            if keys[pygame.K_e]:
+                config.BEEP.play()
+            if keys[pygame.K_r]:
+                config.ATOMIC_CAT.play()
+            if keys[pygame.K_t]:
+                config.LASER.play()
+            if keys[pygame.K_a]:
+                config.ROBLOX_DEATH_SOUND.play()
+            
 
 
 

@@ -24,7 +24,11 @@ FPS = 60
 
 # sound Files
 DOOM_SOUND_EFFECT = "doom-death-sound-effect.ogg"
-
+ROBLOX_DEATH_SOUND = "roblox-death-sound.ogg"
+LASER = "laser5.ogg"
+BEEP = "beep.ogg"
+ATOMIC_CAT = "atomic_cat.ogg"
+ZAP = "zap13.ogg"
 
 
 
